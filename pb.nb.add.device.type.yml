@@ -1,0 +1,15 @@
+- name: "Test Netbox modules"
+  connection: local
+  hosts: localhost
+  gather_facts: False
+
+  tasks:
+    - name: Create device type within Netbox with only required information
+      netbox_device_type:
+        netbox_url: http://netbox.local
+        netbox_token: 
+        data:
+          slug: test-device-type
+          model: ws-test-3750
+          manufacturer: Test Manufacturer
+        state: present
