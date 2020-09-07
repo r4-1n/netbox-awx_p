@@ -6,7 +6,7 @@
   tasks:
     - name: Create device type within Netbox with only required information
       netbox_device_type:
-        netbox_url: http://netbox.local
+        netbox_url: http://10.0.0.231:8000
         netbox_token: 
         data:
           slug: test-device-type
