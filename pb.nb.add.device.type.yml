@@ -3,6 +3,7 @@
   connection: local
   hosts: localhost
   gather_facts: False
+
   tasks:
     - name: Create manufacturer within Netbox with only required information
       netbox_manufacturer:
@@ -11,6 +12,7 @@
         data:
           name: Test Manufacturer
         state: present
+        
     - name: Create device type within Netbox with only required information
       netbox.netbox.netbox_device_type:
         netbox_url: http://10.0.0.231:8000
