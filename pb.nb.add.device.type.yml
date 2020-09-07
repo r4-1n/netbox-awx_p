@@ -1,5 +1,5 @@
 ---
-- name: "Fuck this man"
+- name: "PlayBook: NetBox - Add Manufacturer + DeviceType"
   connection: local
   hosts: localhost
   gather_facts: False
