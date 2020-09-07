@@ -1,5 +1,5 @@
 ---
-- name: "Test Netbox modules"
+- name: "Fuck this man"
   connection: local
   hosts: localhost
   gather_facts: False
