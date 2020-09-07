@@ -42,4 +42,4 @@
               type: rj-45
             - name: Console (re1)
               type: rj-45
-              state: present
+        state: present
