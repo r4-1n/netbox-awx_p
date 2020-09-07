@@ -4,14 +4,13 @@
   hosts: localhost
   gather_facts: False
   tasks:
-      - name: Create manufacturer within Netbox with only required information
-        netbox_manufacturer:
-          netbox_url: http://10.0.0.231:8000
-          netbox_token: fa8bcce25cdbe307221458c7dbb2cb5227459484
-          data:
-            name: Test Manufacturer
-          state: present
-  tasks:
+    - name: Create manufacturer within Netbox with only required information
+      netbox_manufacturer:
+        netbox_url: http://10.0.0.231:8000
+        netbox_token: fa8bcce25cdbe307221458c7dbb2cb5227459484
+        data:
+          name: Test Manufacturer
+        state: present
     - name: Create device type within Netbox with only required information
       netbox.netbox.netbox_device_type:
         netbox_url: http://10.0.0.231:8000
