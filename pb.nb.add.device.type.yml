@@ -1,18 +1,30 @@
 ---
-- name: "PlayBook: NetBox - Add Manufacturer + DeviceType"
+- name: "Test Netbox modules"
   connection: local
   hosts: localhost
   gather_facts: False
 
   tasks:
     - name: Create device type within Netbox with only required information
-      netbox.netbox.netbox_device_type:
+      netbox_device_type:
         netbox_url: http://10.0.0.231:8000
-        netbx_token: fa8bcce25cdbe307221458c7dbb2cb5227459484
+        netbox_token: fa8bcce25cdbe307221458c7dbb2cb5227459484
         data:
-          manufacturer: Juniper
-          model: MX104-PREMIUM
-          slug: mx104-premium
-          is_full_depth: no
-          u_height: 4
+          slug: test-device-type
+          model: ws-test-3750
+          manufacturer: Test Manufacturer
+        state: present
+
+    - name: Create device type within Netbox with only required information
+      netbox_device_type:
+        netbox_url: http://10.0.0.231:8000
+        netbox_token: fa8bcce25cdbe307221458c7dbb2cb5227459484
+        data:
+          slug: test-device-type
+          model: ws-test-3750
+          manufacturer: Test Manufacturer
+          part_number: ws-3750g-v2
+          u_height: 1
+          is_full_depth: False
+          subdevice_role: parent
         state: present
