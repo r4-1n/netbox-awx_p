@@ -10,7 +10,7 @@
         netbox_url: http://10.0.0.231:8000
         netbox_token: fa8bcce25cdbe307221458c7dbb2cb5227459484
         data:
-          slug: test-device-type
+          slug: test-device-type-3751
           model: ws-test-3751
           manufacturer: Test Manufacturer
         state: present
@@ -20,7 +20,7 @@
         netbox_url: http://10.0.0.231:8000
         netbox_token: fa8bcce25cdbe307221458c7dbb2cb5227459484
         data:
-          slug: test-device-type
+          slug: test-device-type-3749
           model: ws-test-3749
           manufacturer: Test Manufacturer
           part_number: ws-3749g-v2
