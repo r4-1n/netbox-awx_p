@@ -12,7 +12,7 @@
         data:
           slug: test-device-type-3751
           model: ws-test-3751
-          manufacturer: Test Manufacturer
+          manufacturer: Test Manufacturer 3751
         state: present
 
     - name: Create device type within Netbox with only required information
@@ -22,7 +22,7 @@
         data:
           slug: test-device-type-3749
           model: ws-test-3749
-          manufacturer: Test Manufacturer
+          manufacturer: Test Manufacturer 3749
           part_number: ws-3749g-v2
           u_height: 1
           is_full_depth: False
