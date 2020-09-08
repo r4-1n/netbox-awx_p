@@ -11,7 +11,7 @@
         netbox_token: fa8bcce25cdbe307221458c7dbb2cb5227459484
         data:
           slug: test-device-type
-          model: ws-test-3750
+          model: ws-test-3751
           manufacturer: Test Manufacturer
         state: present
 
@@ -21,9 +21,9 @@
         netbox_token: fa8bcce25cdbe307221458c7dbb2cb5227459484
         data:
           slug: test-device-type
-          model: ws-test-3750
+          model: ws-test-3749
           manufacturer: Test Manufacturer
-          part_number: ws-3750g-v2
+          part_number: ws-3749g-v2
           u_height: 1
           is_full_depth: False
           subdevice_role: parent
