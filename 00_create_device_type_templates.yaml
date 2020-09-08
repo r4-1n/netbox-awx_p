@@ -57,6 +57,9 @@
     loop_control:
       label: "{{ item['model'] }}"
     
+  - name: "Deduplicate manufacturers list"
+    set_fact: manufacturers="{{ manufacturers | unique }}"
+  
   - name: "Add manufacturers to Netbox"
     netbox_manufacturer:
       netbox_url: "{{ netbox_url }}"
