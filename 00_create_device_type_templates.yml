@@ -45,9 +45,9 @@
     with_items: "{{ template_files }}"
     register: templates
 
-  - name: "Cleanup templates tree"
-    set_fact:
-      templates: "{{ templates.results | map(attribute='ansible_facts') | list }}"
+  - name: "Cleanup templates tree"	
+    set_fact:	
+      templates: "{{ templates.results | map(attribute='ansible_facts') | list }}"	
 
   - name: "Create set of manufacturers"
     vars:
@@ -56,7 +56,7 @@
     with_items: "{{ templates }}"
     loop_control:
       label: "{{ item['model'] }}"
-  
+
   - name: "Add manufacturers to Netbox"
     netbox_manufacturer:
       netbox_url: "{{ netbox_url }}"
