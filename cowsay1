@@ -1,0 +1,1 @@
+cowsay 'I have been able to get working containerized versions of NetBox and AWX going for my Network Automation Lab. Hoping to soon turn the Device Type Templates into working configuration models via Ansible. :) :) :) I've also been using WeaveScope + WeaveNet for container visualization and management. Great Tool! Try it out!'
