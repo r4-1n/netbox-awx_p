@@ -1,0 +1,41 @@
+#######################################################################################################
+# Deletes device templates with components using YAML file inputs formatted like those found at:
+# https://github.com/netbox-community/devicetype-library
+#
+# Author: Samuel Love
+# Github: ttps://github.com/r4-1n/
+#
+#######################################################################################################
+
+- name: "Build Netbox device-types and interface templates"
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  collections:
+    - netbox.netbox
+
+  # `-e` or `--extra-vars` parameters can be defined in place of environment variables for netbox_url
+  # and netbox_token as well as template_root. Default is environment vars
+  vars:
+    netbox_url: http://10.0.0.231:8000
+    netbox_token: fa8bcce25cdbe307221458c7dbb2cb5227459484
+    #netbox_url: "{{ nb_url | default(lookup('env', 'nb_url')) }}"
+    #netbox_token: "{{ nb_token | default(lookup('env', 'nb_token')) }}"
+    template_root: "{{ template_dir | default('nb_devicetype_template_playbook/devicetype-library/device-types/') }}"
+
+  tasks:
+    - name: "Delete device template in Netbox"
+      netbox_device_type:
+        netbox_url: "{{ netbox_url }}"
+        netbox_token: "{{ netbox_token }}"
+        data:
+          manufacturer: "{{ item['manufacturer'] }}"
+          model: "{{ item['model'] }}"
+          slug: "{{ item['slug'] }}"
+          u_height: "{{ item['u_height'] if defined | default(false) else omit  }}"
+          is_full_depth: "{{ item['is_full_depth'] if defined | default(false) else omit }}"
+        state: absent
+      with_items: "{{ templates }}"
+      loop_control:
+        label: "{{ item['model'] }}"
+
